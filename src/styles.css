@@ -2,3 +2,64 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* FlexBox CSS Classes 
+Criamos a classe “container”, que será o bloco “pai” das outras classes, 
+Criamos a classe item-X, onde X é a porcentagem da tela que o bloco deve ocupar. 
+A classe “item” ocupará o bloco proporcionalmente ao seu espaço. Por exemplo, se houver dois blocos com a classe
+“item”, cada um terá 50% do tamanho da tela. Se houver 3 blocos, 33%.
+*/
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.center {
+    align-items: center;
+    justify-content: center;
+}
+.width-full {
+    width: 100%;
+}
+
+.item-20 {
+    flex: 0 0 20%;
+}
+.item-30 {
+    flex: 0 0 30%;
+}
+.item-40 {
+    flex: 0 0 40%;
+}
+.item-50 {
+    flex: 0 0 50%;
+}
+.item-60 {
+    flex: 0 0 60%;
+}
+.item-70 {
+    flex: 0 0 70%;
+}
+.item-80 {
+    flex: 0 0 80%;
+}
+.item {
+    flex: 1 1 auto;
+}
+
+/* tablet or mobile 
+Para que os campos sejam responsivos, eles devem “quebrar” quando a tela for muito
+pequena (geralmente uma tela abaixo de 768 pixels). Usando o filtro CSS @media, podemos
+definir que abaixo de 768 pixels, os campos ficarão um abaixo do outro, através do valor
+column da propriedade flex-direction.
+*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
